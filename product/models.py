@@ -6,6 +6,7 @@ User = get_user_model()
 class Category(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='images/', default='default_image.png')
+    discount = models.CharField(max_length=225, null=True)
 
     class Meta:
         verbose_name_plural = 'categories'

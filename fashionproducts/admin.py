@@ -1,8 +1,6 @@
 from .models import FashionProducts, FashionProductList,SubImages, MainImage, Fields, Types, Varients
 from django.contrib import admin
 
-# admin.site.register(Size)
-# admin.site.register(Color)
 admin.site.register(SubImages)
 admin.site.register(MainImage)
 admin.site.register(Fields)

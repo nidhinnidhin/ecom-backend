@@ -45,6 +45,17 @@ class CartListSerializer(serializers.ModelSerializer):
         fields = ['id', "product", "varient", "types", "count","checked_out"]
         depth = 5
 
+class CartCheckoutListSerializer(serializers.ModelSerializer):
+    def list(self, validated_data):
+        request = self.context.get('request')
+        cart = Cart.objects.filter(buyer = request.user, checked_out = True )
+        return cart
+
+    class Meta:
+        model = Cart
+        fields = ['id', "product", "varient", "types", "count","checked_out", "delivery_status"]
+        depth = 5
+
 
 
 class CartDeleteSerializer(serializers.ModelSerializer):

@@ -11,6 +11,7 @@ class FashionProductListSerializer(serializers.ModelSerializer):
         model = FashionProductList
         fields = "__all__"
         depth = 4
+
 class FashionProductListDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = FashionProductList
